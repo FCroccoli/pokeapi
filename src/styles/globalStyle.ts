@@ -3,7 +3,29 @@ import { createGlobalStyle } from "styled-components";
 const GlobalStyle = createGlobalStyle`
 
     :root{
-        
+        --grey-0: #0B0D0D;
+        --grey-1: #212529;
+        --grey-2: #495057;
+        --grey-3: #868E96;
+        --grey-4: #ADB5BD;
+        --grey-5: #CED4DA;
+        --grey-6: #DEE2E6;
+        --grey-7: #E9ECEF;
+        --grey-8: #F1F3F5;
+        --grey-9: #F8F9FA;
+        --grey-10: #FDFDFD;
+        --white: #FFFFFF;
+
+        --red-1:#E22323;
+        --red-2:#CC0000;
+
+        --blue-1:#002082;
+        --blue-2:#3057E1;
+        --blue-3:#4A6DE5;
+        --blue-4:#CED8F7;
+
+        --font: "Rajdhani", sans-serif;
+        --logo-font: "Archivo Black", sans-serif;
     }
 
     html, body, div, span, applet, object, iframe,
@@ -25,8 +47,9 @@ const GlobalStyle = createGlobalStyle`
         font-size: 100%;
         font: inherit;
         vertical-align: baseline;
-        /* font-family: var(--font); */
+        font-family: var(--font);
         list-style: none;
+        box-sizing: border-box;
     }
 
     article, aside, details, figcaption, figure, 
@@ -37,6 +60,7 @@ const GlobalStyle = createGlobalStyle`
     body {
 	    line-height: 1;
         height: 100vh;
+        background-color: var(--red-1);
     }
 
     ol, ul {

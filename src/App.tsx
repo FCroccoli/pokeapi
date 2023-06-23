@@ -1,9 +1,13 @@
-function App() {
+import { PokeProvider } from "./contexts/pokeContext";
+import Display from "./pages/home";
+import { Wrapper } from "./styles/wrapperStyle";
+
+export default function App() {
   return (
-    <>
-      <p>Pokedex</p>
-    </>
+    <PokeProvider>
+      <Wrapper>
+        <Display />
+      </Wrapper>
+    </PokeProvider>
   );
 }
-
-export default App;
