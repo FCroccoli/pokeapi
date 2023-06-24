@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const NextPageButton = styled.button`
-  border: 4px solid var(--blue-4);
+  border: 2px solid var(--blue-4);
   background-color: transparent;
   color: var(--blue-4);
   padding: 8px 30px;
@@ -16,7 +16,7 @@ export const NextPageButton = styled.button`
 export const PageControlWrapper = styled.div`
   width: 25%;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   color: var(--blue-4);
 `;

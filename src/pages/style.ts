@@ -7,5 +7,5 @@ export const DisplayWrapper = styled.main`
   outline: 2px groove var(--red-2);
   border: 2px solid;
   border-radius: 0px 30px 0px 30px;
-  padding: 20px;
+  padding: 20px 20px 20px 0px;
 `;

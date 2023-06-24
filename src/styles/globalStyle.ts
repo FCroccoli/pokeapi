@@ -25,7 +25,7 @@ const GlobalStyle = createGlobalStyle`
         --blue-4:#CED8F7;
 
         --font: "Rajdhani", sans-serif;
-        --logo-font: "Archivo Black", sans-serif;
+        --logo-font: "Bebas Neue", sans-serif;
     }
 
     html, body, div, span, applet, object, iframe,
