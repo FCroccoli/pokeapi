@@ -47,6 +47,7 @@ export const PokeProvider = ({ children }: iPokeContextProps) => {
   const [filteredPokemonList, setFilteredPokemonList] = useState(
     {} as iPokeIndex[]
   );
+  const [onSearch, setonSearch] = useState(false);
 
   const getData = async () => {
     try {
@@ -88,9 +89,22 @@ export const PokeProvider = ({ children }: iPokeContextProps) => {
   };
 
   const filterPokemon = async (data: EventTarget) => {
+    setonSearch(true);
+    setIsFiltered(false);
     let outputList = pokemonList.filter((pokemon) => {
       return pokemon.name.includes(processSearch(data[0].value));
     });
+    console.log(outputList[2]);
+    if (data[5].value != "all") {
+      const pokeType = await Api.getTypeById(parseInt(data[5].value));
+      const tempList = pokeType.pokemon.map((pokemon) => pokemon.pokemon);
+      outputList = tempList.filter((pokemon) => {
+        return outputList.some(
+          (pokemonTemp) => pokemon.name == pokemonTemp.name
+        );
+      });
+    }
+    setFilteredPokemonList(outputList);
     // if (data[3].value != "all") {
     //   const regionPokemon = await Api.getRegionByName(data[3].value);
     //   console.log(regionPokemon.pokemon_entries);
@@ -98,15 +112,10 @@ export const PokeProvider = ({ children }: iPokeContextProps) => {
     //     return outputList.includes(pokemon);
     //   });
     // }
-    if (data[5].value != "all") {
-      await Api.getTypeById(parseInt(data[5].value)).then((res) => {
-        outputList = res.pokemon.filter((pokemon) => {
-          return outputList.includes(pokemon.pokemon);
-        });
-        console.log(outputList);
-      });
-    }
-    setFilteredPokemonList(outputList);
+    // if (data[5].value != "all") {
+    //   const pokeType = await Api.getTypeById(parseInt(data[5].value));
+    //   console.log(pokeType.pokemon);
+    // }
   };
 
   useEffect(() => {
@@ -114,10 +123,8 @@ export const PokeProvider = ({ children }: iPokeContextProps) => {
   }, []);
 
   useEffect(() => {
-    if (filteredPokemonList.length > 0) {
+    if (onSearch) {
       setIsFiltered(true);
-    } else {
-      setIsFiltered(false);
     }
   }, [filteredPokemonList]);
 
