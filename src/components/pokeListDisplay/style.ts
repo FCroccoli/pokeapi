@@ -4,8 +4,8 @@ export const PokeListUl = styled.ul`
   margin-bottom: 20px;
   border: 2px solid var(--blue-4);
   border-left: 0px;
-  max-height: 90%;
-  width: 25%;
+  height: 90%;
+  width: 100%;
   border-radius: 0px 4px 4px 0px;
   padding: 20px 8px 20px 0px;
   display: flex;

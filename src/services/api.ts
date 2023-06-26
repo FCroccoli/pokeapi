@@ -1,5 +1,5 @@
 import axios from "axios";
-import { iPokeList, iPokemon } from "../interfaces";
+import { iPokeList, iPokemon, iPokemonSpecies } from "../interfaces";
 
 export class Api {
   static api = axios.create({
@@ -20,8 +20,17 @@ export class Api {
     return response.data;
   };
 
+  static getPokemonSpeciesById = async (
+    id: number
+  ): Promise<iPokemonSpecies> => {
+    const response = await this.api.get<iPokemonSpecies>(
+      `pokemon-species/${id}`
+    );
+    return response.data;
+  };
+
   static getPokemonById = async (id: number): Promise<iPokemon> => {
-    const response = await this.api.get<iPokemon>(`pokemon-species/${id}`);
+    const response = await this.api.get<iPokemon>(`pokemon/${id}`);
     return response.data;
   };
 }

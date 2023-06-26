@@ -14,7 +14,7 @@ export const NextPageButton = styled.button`
 `;
 
 export const PageControlWrapper = styled.div`
-  width: 25%;
+  width: 100%;
   display: flex;
   justify-content: space-around;
   align-items: center;
