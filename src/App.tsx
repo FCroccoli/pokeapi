@@ -1,6 +1,6 @@
 import Header from "./components/header";
 import { PokeProvider } from "./contexts/pokeContext";
-import Display from "./pages/home";
+import RoutesMain from "./routes/routes";
 import { Wrapper } from "./styles/wrapperStyle";
 
 export default function App() {
@@ -8,7 +8,7 @@ export default function App() {
     <PokeProvider>
       <Wrapper>
         <Header />
-        <Display />
+        <RoutesMain />
       </Wrapper>
     </PokeProvider>
   );
