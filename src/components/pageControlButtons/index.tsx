@@ -22,6 +22,7 @@ export default function PageControllButtons() {
         onClick={() => {
           setCurrentPage(currentPage + 1);
         }}
+        disabled={currentPage >= totalPages}
       >
         <GiNextButton />
       </NextPageButton>
