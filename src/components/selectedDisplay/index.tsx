@@ -48,7 +48,7 @@ export default function SelectedPokeDisplay() {
     if (!isLoading) {
       setPokemonStats(getStats(selectedPokemon));
     }
-  }, [isLoading]);
+  }, [isLoading, selectedPokemon]);
 
   return isLoading ? (
     <SelectedPokeDisplayWrapper></SelectedPokeDisplayWrapper>
@@ -88,7 +88,7 @@ export default function SelectedPokeDisplay() {
             datasets: [
               {
                 label: "Stats",
-                data: [...pokemonStats],
+                data: pokemonStats,
                 backgroundColor: "rgba(0, 255, 0, 0.8)",
                 borderColor: "transparent",
                 pointRadius: 0,

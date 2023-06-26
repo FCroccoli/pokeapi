@@ -1,5 +1,11 @@
 import axios from "axios";
-import { iPokeList, iPokemon, iPokemonSpecies } from "../interfaces";
+import {
+  iPokeList,
+  iPokedex,
+  iPokemon,
+  iPokemonSpecies,
+  iTypeResponse,
+} from "../interfaces";
 
 export class Api {
   static api = axios.create({
@@ -31,6 +37,16 @@ export class Api {
 
   static getPokemonById = async (id: number): Promise<iPokemon> => {
     const response = await this.api.get<iPokemon>(`pokemon/${id}`);
+    return response.data;
+  };
+
+  static getRegionByName = async (name: string): Promise<iPokedex> => {
+    const response = await this.api.get<iPokedex>(`pokedex/${name}`);
+    return response.data;
+  };
+
+  static getTypeById = async (id: number): Promise<iTypeResponse> => {
+    const response = await this.api.get<iTypeResponse>(`type/${id}`);
     return response.data;
   };
 }

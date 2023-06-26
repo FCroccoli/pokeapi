@@ -5,9 +5,9 @@ export const SelectedPokeDisplayWrapper = styled.div`
   border-right: 0px;
   height: 90%;
   min-height: 440px;
-  width: 25%;
+  width: 28%;
   border-radius: 4px 0px 0px 4px;
-  padding: 2.5% 8px 2.5% 0px;
+  padding: 1% 8px 0px 0px;
   display: flex;
   flex-direction: column;
   gap: 18px;
@@ -17,6 +17,13 @@ export const SelectedPokeDisplayWrapper = styled.div`
   color: var(--blue-4);
   font-weight: bold;
   align-items: center;
+  @media (max-width: 800px) {
+    width: 100%;
+    height: fit-content;
+    border-radius: 0px;
+    border-left: 0px;
+    border-right: 0px;
+  }
 `;
 
 export const SelectedHeader = styled.h2`
@@ -39,7 +46,7 @@ export const PokeType = styled.span`
 export const SelectedContentWrapper = styled.div`
   position: relative;
   width: 90%;
-  height: 45%;
+  height: 40%;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -54,11 +61,14 @@ export const PokeTypeWrapper = styled.div`
 `;
 
 export const PokeSpriteWrapper = styled.figure`
-  width: 42%;
+  width: 50%;
+  height: 80%;
+  display: flex;
+  justify-content: center;
 
   img {
-    width: 100%;
-    height: auto;
+    height: 100%;
+    width: auto;
   }
 `;
 
@@ -75,7 +85,7 @@ export const PokeInfoWrapper = styled.div`
 `;
 
 export const PokeStatsWrapper = styled.div`
-  height: 50%;
+  height: 45%;
   width: 100%;
   display: flex;
   justify-content: center;

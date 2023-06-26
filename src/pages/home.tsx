@@ -5,20 +5,35 @@ import { iPokeIndex } from "../interfaces";
 import PokeListDisplay from "../components/pokeListDisplay";
 import PageControllButtons from "../components/pageControlButtons";
 import SelectedPokeDisplay from "../components/selectedDisplay";
+import SearchForm from "../components/searchForm";
 
 export default function Display() {
-  const { selectedPokemon, pokemonList, isLoading } = useContext(PokeContext);
+  const {
+    pokemonList,
+    isLoading,
+    currentPage,
+    isFiltered,
+    filteredPokemonList,
+  } = useContext(PokeContext);
 
   const [pokemonPage, setPokemonPage] = useState([] as iPokeIndex[]);
 
   useEffect(() => {
-    if (!isLoading) {
-      setPokemonPage(pokemonList.slice(0, 20));
+    if (!isLoading && isFiltered) {
+      setPokemonPage(
+        filteredPokemonList.slice(20 * (currentPage - 1), 20 * currentPage)
+      );
+      console.log(filteredPokemonList);
+    } else if (!isLoading) {
+      setPokemonPage(
+        pokemonList.slice(20 * (currentPage - 1), 20 * currentPage)
+      );
     }
-  }, [isLoading]);
+  }, [isLoading, currentPage, isFiltered]);
 
   return (
     <DisplayWrapper>
+      <SearchForm />
       <PageWrapper>
         <PokeListDisplay pokeList={pokemonPage} />
         <PageControllButtons />

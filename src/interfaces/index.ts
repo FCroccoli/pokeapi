@@ -47,3 +47,16 @@ export interface iFlavorText {
   flavor_text: string;
   language: { name: string };
 }
+
+export interface iSearchInput {
+  name: string;
+}
+
+export interface iPokedex {
+  pokemon_entries: iPokeIndex[];
+}
+
+export interface iTypeResponse {
+  name: string;
+  pokemon: iPokeIndex[];
+}

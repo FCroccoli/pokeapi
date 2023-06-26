@@ -12,9 +12,19 @@ export const DisplayWrapper = styled.main`
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
+  @media (max-width: 800px) {
+    overflow: scroll;
+    flex-wrap: nowrap;
+    gap: 20px;
+  }
 `;
 
 export const PageWrapper = styled.div`
-  width: 25%;
+  width: 28%;
   height: 100%;
+  align-self: center;
+  @media (max-width: 800px) {
+    width: 100%;
+    height: fit-content;
+  }
 `;

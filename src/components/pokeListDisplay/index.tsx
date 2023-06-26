@@ -14,15 +14,23 @@ export default function PokeListDisplay({ pokeList }: iPokeListDisplayProps) {
   const { selectPokeList } = useContext(PokeContext);
   return (
     <PokeListUl>
-      {pokeList.map((pokemon, index) => {
-        return (
-          <PokeListItem key={index} onClick={() => selectPokeList(index + 1)}>
-            <TbPokeball />
-            <span>{processNumber(index + 1)}</span>
-            <p>{processName(pokemon.name)}</p>
-          </PokeListItem>
-        );
-      })}
+      {pokeList.length > 0 ? (
+        pokeList.map((pokemon) => {
+          const pokeId = parseInt(pokemon.url.split("/")[6]);
+          return (
+            <PokeListItem
+              key={pokemon.url}
+              onClick={() => selectPokeList(pokeId)}
+            >
+              <TbPokeball />
+              <span>{processNumber(pokeId)}</span>
+              <p>{processName(pokemon.name)}</p>
+            </PokeListItem>
+          );
+        })
+      ) : (
+        <p>No results found</p>
+      )}
     </PokeListUl>
   );
 }
