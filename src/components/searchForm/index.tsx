@@ -70,7 +70,7 @@ export default function SearchForm() {
         </FilterWrapper>
         <FilterWrapper>
           <label htmlFor="type">Type</label>
-          <select name="type" id="type" defaultValue="all" disabled={true}>
+          <select name="type" id="type" defaultValue="all">
             <option id="all" value="all">
               All
             </option>
