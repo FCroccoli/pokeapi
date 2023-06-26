@@ -103,8 +103,7 @@ export const PokeProvider = ({ children }: iPokeContextProps) => {
         outputList = res.pokemon.filter((pokemon) => {
           return outputList.includes(pokemon.pokemon);
         });
-        console.log(res.pokemon);
-        setFilteredPokemonList(outputList);
+        console.log(outputList);
       });
     }
     setFilteredPokemonList(outputList);

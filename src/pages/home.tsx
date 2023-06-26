@@ -23,7 +23,6 @@ export default function Display() {
       setPokemonPage(
         filteredPokemonList.slice(20 * (currentPage - 1), 20 * currentPage)
       );
-      console.log(filteredPokemonList);
     } else if (!isLoading) {
       setPokemonPage(
         pokemonList.slice(20 * (currentPage - 1), 20 * currentPage)
