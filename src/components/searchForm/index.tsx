@@ -10,8 +10,8 @@ import { PokeContext } from "../../contexts/pokeContext";
 export default function SearchForm() {
   const { filterPokemon, setIsFiltered, isFiltered } = useContext(PokeContext);
 
-  const searchPokemon = (data: EventTarget) => {
-    filterPokemon(data);
+  const searchPokemon = async (data: EventTarget) => {
+    await filterPokemon(data);
     setIsFiltered(true);
   };
 
@@ -25,9 +25,7 @@ export default function SearchForm() {
       <form action="">
         <SearchBarContainer>
           <input type="text" placeholder="Pokemon name" />
-          <button type="submit" disabled={isFiltered}>
-            Search
-          </button>
+          <button type="submit">Search</button>
         </SearchBarContainer>
 
         <FilterWrapper>
@@ -86,47 +84,47 @@ export default function SearchForm() {
             <option id="poison" value="4">
               Poison
             </option>
-            <option id="unova" value="5">
-              Unova
+            <option id="ground" value="5">
+              Ground
             </option>
-            <option id="kalos" value="6">
-              Kalos
+            <option id="rock" value="6">
+              Rock
             </option>
-            <option id="alola" value="7">
-              Alola
+            <option id="bug" value="7">
+              Bug
             </option>
-            <option id="galar" value="8">
-              Galar
+            <option id="ghost" value="8">
+              Ghost
             </option>
-            <option id="hisui" value="9">
-              Hisui
+            <option id="steel" value="9">
+              Steel
             </option>
-            <option id="paldea" value="10">
-              Paldea
+            <option id="fire" value="10">
+              Fire
             </option>
-            <option id="paldea" value="11">
-              Paldea
+            <option id="water" value="11">
+              Water
             </option>
-            <option id="paldea" value="12">
-              Paldea
+            <option id="grass" value="12">
+              Grass
             </option>
-            <option id="paldea" value="13">
-              Paldea
+            <option id="electric" value="13">
+              Electric
             </option>
-            <option id="paldea" value="14">
-              Paldea
+            <option id="psychihc" value="14">
+              Psychihc
             </option>
-            <option id="paldea" value="15">
-              Paldea
+            <option id="ice" value="15">
+              Ice
             </option>
-            <option id="paldea" value="16">
-              Paldea
+            <option id="dragon" value="16">
+              Dragon
             </option>
-            <option id="paldea" value="17">
-              Paldea
+            <option id="dark" value="17">
+              Dark
             </option>
-            <option id="paldea" value="18">
-              Paldea
+            <option id="fairy" value="18">
+              Fairy
             </option>
           </select>
         </FilterWrapper>
