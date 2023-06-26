@@ -58,5 +58,5 @@ export interface iPokedex {
 
 export interface iTypeResponse {
   name: string;
-  pokemon: iPokeIndex[];
+  pokemon: { solt: number; pokemon: iPokeIndex }[];
 }
