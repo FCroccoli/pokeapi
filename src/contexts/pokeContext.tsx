@@ -101,9 +101,10 @@ export const PokeProvider = ({ children }: iPokeContextProps) => {
     if (data[5].value != "all") {
       await Api.getTypeById(parseInt(data[5].value)).then((res) => {
         outputList = res.pokemon.filter((pokemon) => {
-          return outputList.includes(pokemon);
+          return outputList.includes(pokemon.pokemon);
         });
-        console.log(outputList);
+        console.log(res.pokemon);
+        setFilteredPokemonList(outputList);
       });
     }
     setFilteredPokemonList(outputList);
